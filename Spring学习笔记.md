@@ -60,6 +60,7 @@
 
 4. 编写测试类 Client
 
+    ```
     /**
      * 模拟一个表现层，用于调用业务层
      */
@@ -79,6 +80,9 @@
     //        as.saveAccount();
         }
     }
+    ```
+
+    
 
 ApplicationContext的三个常用实现类：
 
@@ -497,7 +501,7 @@ Spel 的写法：${表达式}
     
         void saveAccount();
     }
-
+    
     public interface IAccountService {
     
         /**
@@ -514,14 +518,15 @@ Spel 的写法：${表达式}
         @Autowired
         @Qualifier("accountDao2")
         private IAccountDao accountDao = null;
-    
-    
+
+
+​    
         public void  saveAccount() {
             accountDao.saveAccount();
         }
     
     }
-
+    
     @Repository("accountDao1")
     public class AccountDaoImpl implements IAccountDao {
     
@@ -530,7 +535,7 @@ Spel 的写法：${表达式}
         }
     
     }
-
+    
     @Repository("accountDao2")
     public class IAccountDaoImpl2 implements IAccountDao{
     
@@ -874,13 +879,13 @@ value : 指定范围的取值，同 xml 中值，常用为 singleton ,  prototyp
             <!--注入runner-->
             <property name="runner" ref="runner"></property>
         </bean>
-    
+        
         <!--配置runner-->
         <bean id="runner" class="org.apache.commons.dbutils.QueryRunner" scope="prototype">
             <!--注入数据源-->
             <constructor-arg name="ds" ref="dataSource"></constructor-arg>
         </bean>
-    
+        
         <!--配置数据源-->
         <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
             <property name="driverClass" value="com.mysql.jdbc.Driver"></property>
