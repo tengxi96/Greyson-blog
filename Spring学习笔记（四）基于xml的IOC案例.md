@@ -312,3 +312,4 @@
             <property name="password" value="HotteMYSQL"></property>
         </bean>
     </beans>
+# [Spring学习笔记（五）基于注解的IOC](Spring学习笔记（五）基于注解的IOC.md)

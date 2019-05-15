@@ -1,6 +1,18 @@
 # Spring学习笔记（三）依赖注入
 
-如上，AccountDaoImpl1 和 AccountDaoImpl2 实现接口 IAccountDao ，两个类中分别实现了不同的 saveAccount() 方法，AccountServiceImpl 实现接口 IAccountService ，其中调用了 IAccountDao 接口。AccountServiceImpl 通过注解关键字 Autowired 去 Spring 容器中寻找 accountDao ， 再根据 Qualifier 配置的 value 找到两个 dao 的实现类中与之相匹配的 Repository 的值。
+## 三、依赖注入（Dependency Injection）
+
+### （一）、概述
+
+1. 能注入的数据：
+    - 基本类型和 String
+    - 其他 bean 类型（在配置文件中或者注解中配置过的bean）
+    - 复杂类型/集合类型
+2. IOC的作用：减低程序间的耦合（即依赖关系）
+
+    在当前类需要用到其他类的对象，由 Spring 为我们提供，而我们在配置文件中说明依赖关系的维护，这种方式就称为依赖注入。
+
+### （二）、注入方式
 
 1. 操作实例：
     - 接口如下：
@@ -364,16 +376,6 @@
         
             <bean id = "now" class = "java.util.Date"></bean>
 
-### （二）、注入方式
+如上，AccountDaoImpl1 和 AccountDaoImpl2 实现接口 IAccountDao ，两个类中分别实现了不同的 saveAccount() 方法，AccountServiceImpl 实现接口 IAccountService ，其中调用了 IAccountDao 接口。AccountServiceImpl 通过注解关键字 Autowired 去 Spring 容器中寻找 accountDao ， 再根据 Qualifier 配置的 value 找到两个 dao 的实现类中与之相匹配的 Repository 的值。
 
-1. 能注入的数据：
-    - 基本类型和 String
-    - 其他 bean 类型（在配置文件中或者注解中配置过的bean）
-    - 复杂类型/集合类型
-2. IOC的作用：减低程序间的耦合（即依赖关系）
-
-    在当前类需要用到其他类的对象，由 Spring 为我们提供，而我们在配置文件中说明依赖关系的维护，这种方式就称为依赖注入。
-
-### （一）、概述
-
-## 三、依赖注入（Dependency Injection）
+# [Spring学习笔记（四）基于xml的IOC案例](Spring学习笔记（四）基于xml的IOC案例.md)
