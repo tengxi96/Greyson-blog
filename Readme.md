@@ -21,3 +21,7 @@
 [Spring学习笔记（十）JdbcTemplate](Spring学习笔记（十）JdbcTemplate.md)
 
 [Spring学习笔记（十一）事务管理](Spring学习笔记（十一）事务管理.md)
+
+# Mybatis学习笔记
+
+[Mybatis学习笔记（一）入门案例](Mybatis学习笔记（一）入门案例)
