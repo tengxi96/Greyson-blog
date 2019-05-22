@@ -129,8 +129,8 @@
 
 4. 文件结构（补充）
 
-    ![](Untitled-4c199a02-f30f-44ad-9df8-8245bfcf8406.png)
+    ![](./mybatis_png/1.png)
 
 5. 测试结果
 
-    ![](Untitled-2e185725-550f-43bb-bd7f-7c77ba932f34.png)
+    ![](./mybatis_png/1.png)
