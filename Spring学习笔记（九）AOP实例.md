@@ -44,6 +44,9 @@
         - 配置切入点表达式（aop : pointcut）：
             - id属性用于指定表达式的唯一标识，expression属性用于指定表达式内容
             - 此标签写在 aop : aspect 标签内部只能当前切面使用，在其外部则所有切面可用
+            <aop:pointcut id="pt1" expression="execution(* itheima.service.impl.*.*(..))"></aop:pointcut>
+            如果写在外面，需要放在约束前面
+          
     3. Spring常用通知类型
         - 前置通知（aop : before）：在切入点方法执行之前执行
         - 后置通知（aop : after-returning）：在切入点方法正常执行之后执行，它和异常通知永远只能执行一个
