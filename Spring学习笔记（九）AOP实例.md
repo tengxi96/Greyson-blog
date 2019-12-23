@@ -175,6 +175,11 @@
             
                     <!-- 配置Spring的IOC,把Service对象配置进来-->
                     <bean id="accountService" class="com.greyson.service.impl.AccountServiceImpl"></bean>
+                    <!--Spring中基于XML的AOP配置步骤
+                        1、把通知bean也交给spring管理
+                        2、使用aop:config标签表明开始aop的配置
+                    -->
+                        
             
                     <!--配置Logger类-->
                     <bean id="logger" class="com.greyson.utils.Logger"></bean>
