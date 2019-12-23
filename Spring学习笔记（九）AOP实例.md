@@ -178,6 +178,13 @@
                     <!--Spring中基于XML的AOP配置步骤
                         1、把通知bean也交给spring管理
                         2、使用aop:config标签表明开始aop的配置
+                        3、使用aop：aspect开始配置切面
+                            id属性：是给切面提供一个唯一标识
+                            ref属性：是指定通知类bean的id
+                        4、在aop：aspect标签的内部使用对应标签来配置通知的类型
+                            我们现在示例是让printlog方法在切入点方法执行之前执行，所以是前置通知
+                            aop：before：标识配置前置通知
+                                method属性用于指定logger类中哪个方法是前置通知
                     -->
                         
             
