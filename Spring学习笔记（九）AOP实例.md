@@ -184,7 +184,14 @@
                         4、在aop：aspect标签的内部使用对应标签来配置通知的类型
                             我们现在示例是让printlog方法在切入点方法执行之前执行，所以是前置通知
                             aop：before：标识配置前置通知
-                                method属性用于指定logger类中哪个方法是前置通知
+                                method属性：用于指定logger类中哪个方法是前置通知
+                                pointcut属性：用于指定切入点表达式，该表达式的含义指的是对业务层中哪些方法增强
+                          
+                          
+                          切入点表达式的写法：
+                                关键字：execution（表达式）
+                                表达式：访问修饰符 返回值 包名.包名....类名.方法名（参数列表）
+                           表达式写法： public void com.itheima.service.impl.AccountService.Saveaccount()     
                     -->
                         
             
