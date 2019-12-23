@@ -191,7 +191,29 @@
                           切入点表达式的写法：
                                 关键字：execution（表达式）
                                 表达式：访问修饰符 返回值 包名.包名....类名.方法名（参数列表）
-                           表达式写法： public void com.itheima.service.impl.AccountService.Saveaccount()     
+                           表达式写法： public void com.itheima.service.impl.AccountService.Saveaccount()    
+                           访问修饰符可以省略：
+                                void com.itheima.service.impl.AccountService.Saveaccount()  
+                           返回值可以可以使用通配符，表示任意返回值
+                                * com.itheima.service.impl.AccountService.Saveaccount()  
+                           包名可以使用通配符，表示任意包。但是有几级包，就需要写几个*
+                           包名可以使用..表示当前包及其子包
+                                * *..AccountService.Saveaccount()  
+                           类名和方法名都可以使用*来实现通配
+                           参数列表：
+                                可以直接写数据类型
+                                    基本数据类型直接写名称       int 
+                                    引用类型写 包名.类名的方式   java.lang.String  
+                                可以直接使用通配符表示任意类型,但是必须有参数
+                                可以使用..表示有无参数均可，有参数可以使任意类型
+                           
+                           全通配写法：
+                           *.*..*.*(..)
+                           实际开发中切入点表达式的通常写法：
+                                切到业务层实现类下的所有方法
+                                    * com.itheima.service.impl.*.*(..)  
+                                
+                              
                     -->
                         
             
