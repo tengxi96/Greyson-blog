@@ -148,17 +148,25 @@
             public class JdbcTemplateDemo {
             
                 public static void main(String[] args) {
-                    // prepare dataSource
-                    DriverManagerDataSource dataSource = new DriverManagerDataSource();
-                    dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-                    dataSource.setUrl("jdbc:mysql://localhost:3306/eesy");
-                    dataSource.setUsername("root");
-                    dataSource.setPassword("HotteMYSQL");
-                    // 1. create the object of JdbcTemplate
-                    JdbcTemplate jdbcTemplate = new JdbcTemplate();
-                    jdbcTemplate.setDataSource(dataSource);
-                    // 2. execute operation
-                    jdbcTemplate.execute("insert into  account(name, money)values('aaa', 1000)");
+                   //1.获取容器
+                    ApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");
+                    //2.获取对象
+                    JdbcTemplate jt = ac.getBean("jdbcTemplate",JdbcTemplate.class);
+                    //3.执行操作
+                    jt.execute("insert into account(name,money)values('ddd',2222)");
+                 /*   //准备数据源：spring的内置数据源
+                    DriverManagerDataSource ds = new DriverManagerDataSource();
+                    ds.setDriverClassName("com.mysql.jdbc.Driver");
+                    ds.setUrl("jdbc:mysql://localhost:3306/eesy");
+                    ds.setUsername("root");
+                    ds.setPassword("1234");
+
+                    //1.创建JdbcTemplate对象
+                    JdbcTemplate jt = new JdbcTemplate();
+                    //给jt设置数据源
+                    jt.setDataSource(ds);
+                    //2.执行操作
+                    jt.execute("insert into account(name,money)values('ccc',1000)");*/
                 }
             }
 
